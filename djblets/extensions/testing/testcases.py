@@ -1,6 +1,6 @@
 """Mixins for test cases that need to test enabled extensions."""
 
-from __future__ import unicode_literals
+
 
 from djblets.extensions.extension import ExtensionInfo
 from djblets.extensions.manager import get_extension_managers

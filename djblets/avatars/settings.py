@@ -1,6 +1,6 @@
 """Settings managers for avatar service registries."""
 
-from __future__ import unicode_literals
+
 
 
 class AvatarSettingsManager(object):

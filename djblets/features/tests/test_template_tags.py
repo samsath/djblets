@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 from django.template import Context, Template, TemplateSyntaxError
 from django.test import RequestFactory

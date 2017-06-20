@@ -5,7 +5,7 @@ backend classes, and using them to perform an authentication based on an HTTP
 request.
 """
 
-from __future__ import unicode_literals
+
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured

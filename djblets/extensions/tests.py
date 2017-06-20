@@ -23,7 +23,7 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from __future__ import unicode_literals
+
 
 import logging
 import os
@@ -835,7 +835,7 @@ class ExtensionManagerTest(SpyAgency, ExtensionTestsMixin, TestCase):
 
         # Re-create the directories.
         shutil.rmtree(extension.info.installed_static_path)
-        os.mkdir(extension.info.installed_static_path, 0755)
+        os.mkdir(extension.info.installed_static_path, 0o755)
 
         self.manager.should_install_static_media = True
 
@@ -874,7 +874,7 @@ class ExtensionManagerTest(SpyAgency, ExtensionTestsMixin, TestCase):
 
         # Re-create the directories.
         shutil.rmtree(extension.info.installed_static_path)
-        os.mkdir(extension.info.installed_static_path, 0755)
+        os.mkdir(extension.info.installed_static_path, 0o755)
 
         self.manager.should_install_static_media = True
 
@@ -915,7 +915,7 @@ class ExtensionManagerTest(SpyAgency, ExtensionTestsMixin, TestCase):
 
         # Re-create the directories.
         shutil.rmtree(extension.info.installed_static_path)
-        os.mkdir(extension.info.installed_static_path, 0755)
+        os.mkdir(extension.info.installed_static_path, 0o755)
 
         self.manager.should_install_static_media = True
 
@@ -999,7 +999,7 @@ class ExtensionManagerTest(SpyAgency, ExtensionTestsMixin, TestCase):
 
         # Re-create the directories.
         shutil.rmtree(extension.info.installed_static_path)
-        os.mkdir(extension.info.installed_static_path, 0755)
+        os.mkdir(extension.info.installed_static_path, 0o755)
 
         self.manager.should_install_static_media = True
 
@@ -1140,7 +1140,7 @@ class ExtensionManagerTest(SpyAgency, ExtensionTestsMixin, TestCase):
                     self.assertNotIn(templatetags_module,
                                      get_templatetags_modules())
 
-                with self.assertRaisesRegexp(TemplateSyntaxError,
+                with self.assertRaisesRegex(TemplateSyntaxError,
                                              'is not a (valid|registered) tag '
                                              'library'):
                     Template(template_str).render(Context({}))

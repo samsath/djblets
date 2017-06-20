@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 from djblets.features.checkers import get_feature_checker
 from djblets.features.level import FeatureLevel

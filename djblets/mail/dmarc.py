@@ -1,6 +1,6 @@
 """Functions for looking up DMARC entries in DNS."""
 
-from __future__ import unicode_literals
+
 
 import logging
 

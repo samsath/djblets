@@ -4,7 +4,7 @@ This module contains widgets that correspond to fields provided in
 :py:mod:`djblets.forms.fields`.
 """
 
-from __future__ import unicode_literals
+
 
 import copy
 from contextlib import contextmanager
@@ -20,6 +20,7 @@ from django.utils.translation import ugettext as _
 from djblets.conditions import ConditionSet
 from djblets.conditions.errors import (ConditionChoiceNotFoundError,
                                        ConditionOperatorNotFoundError)
+import collections
 
 
 class ConditionsWidget(widgets.Widget):
@@ -120,7 +121,7 @@ class ConditionsWidget(widgets.Widget):
         for choice in choices:
             default_value_field = choice.default_value_field
 
-            if callable(default_value_field):
+            if isinstance(default_value_field, collections.Callable):
                 default_value_field = default_value_field()
 
             if hasattr(default_value_field, 'widget'):

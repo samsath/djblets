@@ -1,6 +1,6 @@
 """Mixins for integrating a web API resource with a form."""
 
-from __future__ import unicode_literals
+
 
 from django.forms.models import model_to_dict
 from django.utils import six

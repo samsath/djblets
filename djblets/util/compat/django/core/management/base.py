@@ -1,6 +1,6 @@
 """Compatibility module for management commands."""
 
-from __future__ import unicode_literals
+
 
 from optparse import OptionParser
 
@@ -46,7 +46,7 @@ class OptionParserWrapper(object):
         arg_type = kwargs.get('type')
 
         if arg_type is not None:
-            kwargs['type'] = unicode(arg_type.__name__)
+            kwargs['type'] = str(arg_type.__name__)
 
         self.parser.add_option(*args, **kwargs)
 

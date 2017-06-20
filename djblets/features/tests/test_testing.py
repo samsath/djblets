@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 from djblets.features import Feature, FeatureLevel, get_features_registry
 from djblets.features.testing import (override_feature_check,

@@ -61,8 +61,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Release Notes'
-copyright = u'2014 Beanbag, Inc.'
+project = 'Release Notes'
+copyright = '2014 Beanbag, Inc.'
 bugtracker_url = 'https://www.reviewboard.org/bugs/%s'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -193,8 +193,8 @@ htmlhelp_basename = 'ReleaseNotes'
 # (source start file, target name, title, author, document class
 # [howto/manual]).
 latex_documents = [
-  ('index', 'ReleaseNotes.tex', ur'Release Notes',
-   ur'Christian Hammond', 'manual'),
+  ('index', 'ReleaseNotes.tex', r'Release Notes',
+   r'Christian Hammond', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top

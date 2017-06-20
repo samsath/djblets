@@ -1,4 +1,4 @@
-from __future__ import absolute_import, unicode_literals
+
 
 import re
 import sys
@@ -239,7 +239,7 @@ def sanitize_illegal_chars_for_xml(s):
             ]
 
         ILLEGAL_XML_CHARS_RE = re.compile('[%s]' % ''.join([
-            '%s-%s' % (unichr(low), unichr(high))
+            '%s-%s' % (chr(low), chr(high))
             for low, high in _illegal_unichrs
         ]))
 

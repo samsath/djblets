@@ -1,6 +1,6 @@
 """Conditions and sets of conditions."""
 
-from __future__ import unicode_literals
+
 
 import logging
 

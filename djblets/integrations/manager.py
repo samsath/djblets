@@ -1,6 +1,6 @@
 """A manager for tracking and working with integrations."""
 
-from __future__ import unicode_literals
+
 
 import atexit
 import logging
@@ -446,7 +446,7 @@ def get_integration_managers():
     Returns:
         list: The list of :py:class:`IntegrationManager` instances.
     """
-    return _integration_managers.values()
+    return list(_integration_managers.values())
 
 
 def shutdown_integration_managers():

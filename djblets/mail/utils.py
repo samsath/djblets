@@ -1,6 +1,6 @@
 """General utility functions for working with e-mail."""
 
-from __future__ import unicode_literals
+
 
 from email.utils import formataddr, parseaddr
 

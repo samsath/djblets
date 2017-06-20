@@ -1,6 +1,6 @@
 """Utility mixins for configuration forms."""
 
-from __future__ import unicode_literals
+
 
 
 class DynamicConfigPageMixin(object):

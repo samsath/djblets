@@ -10,7 +10,7 @@ authentication backend and registered in
 list at ``settings.WEB_API_AUTH_BACKENDS``.
 """
 
-from __future__ import unicode_literals
+
 
 import logging
 

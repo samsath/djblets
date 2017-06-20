@@ -25,7 +25,7 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-from __future__ import unicode_literals
+
 from functools import update_wrapper
 from inspect import getargspec
 import warnings
@@ -34,6 +34,7 @@ from django import template
 from django.conf import settings
 from django.template import TemplateSyntaxError, Variable
 from django.utils.functional import cached_property as django_cached_property
+import collections
 
 
 # The decorator decorator.  This is copyright unknown, verbatim from
@@ -233,7 +234,7 @@ def blocktag(*args, **kwargs):
 
     end_prefix = kwargs.get('end_prefix', 'end')
 
-    if len(args) == 1 and callable(args[0]):
+    if len(args) == 1 and isinstance(args[0], collections.Callable):
         # This is being called in the @blocktag form.
         return _blocktag_func(args[0])
     else:

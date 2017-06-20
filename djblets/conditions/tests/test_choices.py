@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 from djblets.conditions.choices import (BaseConditionChoice,
                                         BaseConditionStringChoice,

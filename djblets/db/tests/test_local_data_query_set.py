@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
 from mock import Mock
@@ -180,8 +180,8 @@ class LocalDataQuerySetTests(TestCase):
         queryset = LocalDataQuerySet(values)
         gen = iter(queryset)
 
-        self.assertEqual(gen.next(), 1)
-        self.assertEqual(gen.next(), 2)
+        self.assertEqual(next(gen), 1)
+        self.assertEqual(next(gen), 2)
 
     def test_len(self):
         """Testing LocalDataQuerySet.__len__"""

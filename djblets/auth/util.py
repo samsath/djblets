@@ -29,7 +29,7 @@
 This contains some validation functions that may be useful for forms.
 """
 
-from __future__ import unicode_literals
+
 
 from django import forms
 from django.utils.translation import ugettext as _

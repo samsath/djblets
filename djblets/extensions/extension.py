@@ -23,7 +23,7 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from __future__ import unicode_literals
+
 
 import inspect
 import locale
@@ -479,7 +479,7 @@ class ExtensionInfo(object):
         p.feed(data)
         pkg_info = p.close()
 
-        return dict(pkg_info.items())
+        return dict(list(pkg_info.items()))
 
     def __init__(self, ext_class, package_name, metadata={}):
         """Instantiate the ExtensionInfo using metadata and an extension class.

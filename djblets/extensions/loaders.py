@@ -1,6 +1,6 @@
 """Template loaders for extensions."""
 
-from __future__ import unicode_literals
+
 
 import warnings
 

@@ -45,7 +45,7 @@ from django.utils.six.moves.urllib.parse import urlsplit, urlunsplit
 
 if not hasattr(URLValidator, 'hostname_re'):
     class URLValidator(RegexValidator):
-        ul = '\u00a1-\uffff'  # unicode letters range (must not be a raw string)
+        ul = '\\u00a1-\\uffff'  # unicode letters range (must not be a raw string)
 
         # IP patterns
         ipv4_re = r'(?:25[0-5]|2[0-4]\d|[0-1]?\d?\d)(?:\.(?:25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}'

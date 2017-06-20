@@ -89,7 +89,7 @@ A list of logger names to exclude from the logs. Each logger with the given
 name will be filtered out, along with any descendents of those loggers.
 """
 
-from __future__ import unicode_literals
+
 
 import inspect
 import logging

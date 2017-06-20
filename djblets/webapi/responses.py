@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 from django.http import HttpResponse
 from django.utils import six
@@ -10,6 +10,7 @@ from djblets.webapi.encoders import (JSONEncoderAdapter, WebAPIEncoder,
                                      XMLEncoderAdapter,
                                      get_registered_encoders)
 from djblets.webapi.errors import INVALID_FORM_DATA
+import collections
 
 
 class WebAPIResponse(HttpResponse):
@@ -280,7 +281,7 @@ class WebAPIResponseError(WebAPIResponse):
 
         headers = headers.copy()
 
-        if callable(err.headers):
+        if isinstance(err.headers, collections.Callable):
             headers.update(err.headers(request))
         else:
             headers.update(err.headers)

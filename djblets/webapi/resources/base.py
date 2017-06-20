@@ -1,6 +1,6 @@
 """Base class for a resource in an API."""
 
-from __future__ import unicode_literals
+
 
 import logging
 import warnings

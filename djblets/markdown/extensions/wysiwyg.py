@@ -5,7 +5,7 @@ text and the rendered content looks roughly the same. It's meant to help ensure
 that what's typed is very close to what's viewed when rendered.
 """
 
-from __future__ import absolute_import, unicode_literals
+
 
 import re
 from collections import OrderedDict

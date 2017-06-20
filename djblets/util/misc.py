@@ -24,7 +24,7 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-from __future__ import unicode_literals
+
 import warnings
 
 from djblets.cache.backend import cache_memoize, make_cache_key

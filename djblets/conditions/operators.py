@@ -1,6 +1,6 @@
 """Base support and standard operators for condition choices."""
 
-from __future__ import unicode_literals
+
 
 from django.utils.translation import ugettext_lazy as _
 
@@ -11,6 +11,7 @@ from djblets.registries.registry import (ALREADY_REGISTERED,
                                          ATTRIBUTE_REGISTERED, DEFAULT_ERRORS,
                                          NOT_REGISTERED, OrderedRegistry,
                                          UNREGISTER)
+import collections
 
 
 class BaseConditionOperator(object):
@@ -81,7 +82,7 @@ class BaseConditionOperator(object):
         """
         default_value_field = self.choice.default_value_field
 
-        if callable(default_value_field):
+        if isinstance(default_value_field, collections.Callable):
             return default_value_field()
         else:
             return default_value_field

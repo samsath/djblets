@@ -6,7 +6,7 @@ a number of useful helpers for calling APIs and validating results, along
 with generating consistent docstrings.
 """
 
-from __future__ import print_function, unicode_literals
+
 
 import json
 import pprint
@@ -286,7 +286,7 @@ class WebAPITestCaseMixin(TestCase):
                 If set, this will assert that the response has a
                 ``ETag`` header.
         """
-        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
 
         if check_last_modified:
             self.assertIn('Last-Modified', response)
@@ -300,8 +300,8 @@ class WebAPITestCaseMixin(TestCase):
         Args:
             response (HttpResponse): The HTTP response from the API.
         """
-        self.assertEquals(response.status_code, 304)
-        self.assertEquals(response.content, '')
+        self.assertEqual(response.status_code, 304)
+        self.assertEqual(response.content, '')
 
     def _api_func_wrapper(self, api_func, path, query, expected_status,
                           follow_redirects, expected_redirects,

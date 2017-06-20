@@ -6,7 +6,7 @@ in various cache keys, ETags, and URLs to help keep content in cache until
 it changes on disk.
 """
 
-from __future__ import unicode_literals
+
 
 import importlib
 import logging

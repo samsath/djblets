@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 import json
 from xml.sax.saxutils import XMLGenerator

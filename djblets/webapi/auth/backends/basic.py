@@ -1,6 +1,6 @@
 """An authentication backend for HTTP Basic Auth."""
 
-from __future__ import unicode_literals
+
 
 import logging
 

@@ -1,6 +1,6 @@
 """Template tags for working with features."""
 
-from __future__ import unicode_literals
+
 
 from django import template
 from django.template.base import (Node, NodeList, TemplateSyntaxError,

@@ -5,6 +5,7 @@ import datetime
 from django.core.serializers.json import DjangoJSONEncoder
 from django.utils.encoding import force_text
 from django.utils.functional import Promise
+import collections
 
 
 class DjbletsJSONEncoder(DjangoJSONEncoder):
@@ -71,7 +72,7 @@ class DjbletsJSONEncoder(DjangoJSONEncoder):
                 r = r[:-6] + 'Z'
 
             return r
-        elif hasattr(obj, 'to_json') and callable(obj.to_json):
+        elif hasattr(obj, 'to_json') and isinstance(obj.to_json, collections.Callable):
             return obj.to_json()
 
         return super(DjbletsJSONEncoder, self).default(obj)

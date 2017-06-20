@@ -1,6 +1,6 @@
 """An avatar service for providing uploaded images."""
 
-from __future__ import unicode_literals
+
 
 import os
 from hashlib import md5

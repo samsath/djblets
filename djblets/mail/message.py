@@ -1,6 +1,6 @@
 """E-mail message composition and sending."""
 
-from __future__ import unicode_literals
+
 
 import logging
 from email.utils import parseaddr

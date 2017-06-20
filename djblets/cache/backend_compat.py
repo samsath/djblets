@@ -4,7 +4,7 @@ These functions are used to maintain compatibility or transition settings from
 older versions of Django.
 """
 
-from __future__ import unicode_literals
+
 
 import logging
 

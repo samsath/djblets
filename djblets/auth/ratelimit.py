@@ -1,6 +1,6 @@
 """Utilities for rate-limiting login attempts."""
 
-from __future__ import unicode_literals
+
 
 import logging
 import re

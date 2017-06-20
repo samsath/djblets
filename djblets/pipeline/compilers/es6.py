@@ -1,6 +1,6 @@
 """A specialization of pipeline's ES6Compiler."""
 
-from __future__ import unicode_literals
+
 
 from pipeline.compilers.es6 import ES6Compiler as PipelineES6Compiler
 

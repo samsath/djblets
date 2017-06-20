@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 from functools import wraps
 
@@ -57,7 +57,7 @@ def requires_user_profile(f):
                 if hasattr(User.get_profile, 'orig_func'):
                     User.get_profile.unspy()
 
-                if User.get_profile.im_func is get_profile:
+                if User.get_profile.__func__ is get_profile:
                     delattr(User, 'get_profile')
 
     return decorated

@@ -1,6 +1,6 @@
 """Tests for djblets.avatars."""
 
-from __future__ import unicode_literals
+
 
 import logging
 import uuid

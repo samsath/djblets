@@ -1,6 +1,6 @@
 """The app configuration for djblets.avatars."""
 
-from __future__ import unicode_literals
+
 
 try:
     from django.apps import AppConfig

@@ -1,6 +1,6 @@
 """A registry for managing avatar services."""
 
-from __future__ import unicode_literals
+
 
 import logging
 

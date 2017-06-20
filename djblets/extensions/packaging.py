@@ -1,6 +1,6 @@
 """Packaging support for extensions."""
 
-from __future__ import unicode_literals
+
 
 import inspect
 import json
@@ -138,10 +138,10 @@ class BuildStaticFiles(Command):
         node_modules_dir = os.path.join(build_dir, 'node_modules')
 
         if not os.path.exists(build_dir):
-            os.mkdir(build_dir, 0755)
+            os.mkdir(build_dir, 0o755)
 
         if not os.path.exists(node_modules_dir):
-            os.mkdir(node_modules_dir, 0755)
+            os.mkdir(node_modules_dir, 0o755)
 
         dependencies = {}
 
@@ -235,12 +235,12 @@ class BuildStaticFiles(Command):
             # Ensure there's a node_modules directory here, so it doesn't
             # install higher up in the directory hierarchy.
             if not os.path.exists('node_modules'):
-                os.mkdir('node_modules', 0755)
+                os.mkdir('node_modules', 0o755)
 
-            print 'Installing %s...' % package_spec
+            print('Installing %s...' % package_spec)
             result = os.system('npm install %s' % package_spec)
         else:
-            print 'Installing node packages...'
+            print('Installing node packages...')
             result = os.system('npm install')
 
         if result != 0:

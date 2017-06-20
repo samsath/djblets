@@ -1,6 +1,6 @@
 """Extension hooks for registering integrations."""
 
-from __future__ import unicode_literals
+
 
 import logging
 

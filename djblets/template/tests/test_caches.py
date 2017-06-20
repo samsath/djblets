@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 from django.conf import settings
 from django.template import Context, Template, TemplateSyntaxError
@@ -51,7 +51,7 @@ class CachesTests(TestCase):
                     self.assertNotIn(templatetags_module_name,
                                      get_templatetags_modules())
 
-                with self.assertRaisesRegexp(TemplateSyntaxError,
+                with self.assertRaisesRegex(TemplateSyntaxError,
                                              'is not a (valid|registered) tag '
                                              'library'):
                     Template(template_str).render(Context({}))

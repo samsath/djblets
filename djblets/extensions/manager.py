@@ -23,7 +23,7 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from __future__ import unicode_literals
+
 
 import atexit
 import errno
@@ -905,7 +905,7 @@ class ExtensionManager(object):
 
                 try:
                     if not os.path.exists(media_version_dir):
-                        os.makedirs(media_version_dir, 0755)
+                        os.makedirs(media_version_dir, 0o755)
 
                     with open(media_version_filename, 'w') as fp:
                         fp.write('%s\n' % cur_version)
@@ -1311,7 +1311,7 @@ def get_extension_managers():
     Returns:
         list: The list of ExtensionManager instances.
     """
-    return _extension_managers.values()
+    return list(_extension_managers.values())
 
 
 def shutdown_extension_managers():

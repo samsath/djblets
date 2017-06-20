@@ -30,7 +30,7 @@ The bundled views help with common authentication-related tasks not otherwise
 provided by Django. At the moment, there is only support here for registration.
 """
 
-from __future__ import unicode_literals
+
 
 from django.contrib import auth
 from django.http import HttpResponseRedirect

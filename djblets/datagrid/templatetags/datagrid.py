@@ -24,7 +24,7 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-from __future__ import unicode_literals
+
 
 import warnings
 
@@ -43,9 +43,9 @@ def paginator(context, adjacent_pages=3):
     warnings.warn('djblets.datagrid.templatetags datagrid is deprecated,'
                   ' Use DataGrid.render_paginator', DeprecationWarning)
 
-    page_nums = range(max(1, context['page'] - adjacent_pages),
+    page_nums = list(range(max(1, context['page'] - adjacent_pages),
                       min(context['pages'], context['page'] + adjacent_pages)
-                      + 1)
+                      + 1))
 
     extra_query = context.get('extra_query', None)
     if extra_query:

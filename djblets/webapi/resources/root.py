@@ -1,6 +1,6 @@
 """A flexible resource for the root of your API resource tree."""
 
-from __future__ import unicode_literals
+
 
 from django.conf.urls import url
 from django.http import HttpResponseNotModified

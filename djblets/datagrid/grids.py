@@ -47,7 +47,7 @@ There are two main types of datagrids:
 All datagrids are meant to be subclassed.
 """
 
-from __future__ import unicode_literals
+
 
 import logging
 import re
@@ -68,6 +68,7 @@ from django.utils.cache import patch_cache_control
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
+import collections
 
 try:
     from django.contrib.auth.models import SiteProfileNotAvailable
@@ -638,7 +639,7 @@ class StatefulColumn(object):
         """
         result = getattr(self.column, name)
 
-        if callable(result):
+        if isinstance(result, collections.Callable):
             return lambda *args, **kwargs: result(self, *args, **kwargs)
 
         return result
@@ -1480,10 +1481,10 @@ class DataGrid(object):
                                             'page', 'gridonly',
                                             *self.special_query_args)
 
-        page_nums = range(max(1, self.page.number - adjacent_pages),
+        page_nums = list(range(max(1, self.page.number - adjacent_pages),
                           min(self.paginator.num_pages,
                               self.page.number + adjacent_pages)
-                          + 1)
+                          + 1))
 
         if extra_query:
             extra_query += '&'

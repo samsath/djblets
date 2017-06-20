@@ -1,6 +1,6 @@
 """Standard views for displaying and interacting with configuration forms."""
 
-from __future__ import unicode_literals
+
 
 from django.http import Http404, HttpResponseBadRequest, HttpResponseRedirect
 from django.utils.decorators import method_decorator
@@ -142,7 +142,7 @@ class ConfigPagesView(TemplateView):
             'js_view_class': self.js_view_class,
             'js_model_data': self.get_js_model_data(),
             'js_view_data': self.get_js_view_data(),
-            'forms': self.forms.values(),
+            'forms': list(self.forms.values()),
         }
 
     def get_js_view_data(self):

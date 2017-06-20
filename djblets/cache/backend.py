@@ -6,7 +6,7 @@ install and caching more complex data efficiently (such as the results of
 iterators and large data normally too big for the cache).
 """
 
-from __future__ import unicode_literals
+
 from hashlib import md5
 import logging
 import zlib
@@ -19,6 +19,7 @@ from django.utils.six.moves import (range,
                                     cStringIO as StringIO)
 
 from djblets.cache.errors import MissingChunkError
+import collections
 
 
 DEFAULT_EXPIRATION_TIME = 60 * 60 * 24 * 30  # 1 month
@@ -248,7 +249,7 @@ def cache_memoize_iter(key, items_or_callable,
         logger.debug('Cache miss for key %s.' % key)
 
     if results is None:
-        if callable(items_or_callable):
+        if isinstance(items_or_callable, collections.Callable):
             items = items_or_callable()
         else:
             items = items_or_callable

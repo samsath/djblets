@@ -1,6 +1,6 @@
 """Base support and standard value field wrappers for conditions."""
 
-from __future__ import unicode_literals
+
 
 import re
 
@@ -8,6 +8,7 @@ from django import forms
 from django.utils.translation import ugettext_lazy as _
 
 from djblets.conditions.errors import InvalidConditionValueError
+import collections
 
 
 class BaseConditionValueField(object):
@@ -213,7 +214,7 @@ class ConditionValueFormField(BaseConditionValueField):
         This will always return a :py:class:`~django.forms.fields.Field`,
         but can be given a callable that returns a field when set.
         """
-        if callable(self._field):
+        if isinstance(self._field, collections.Callable):
             self._field = self._field()
 
         return self._field
@@ -439,7 +440,7 @@ class ConditionValueModelField(ConditionValueFormField):
                 :py:class:`~django.forms.fields.ModelChoiceField` constructor.
         """
         def _build_field():
-            if callable(queryset):
+            if isinstance(queryset, collections.Callable):
                 qs = queryset()
             else:
                 qs = queryset
@@ -481,7 +482,7 @@ class ConditionValueMultipleModelField(ConditionValueFormField):
                 :py:class:`~django.forms.fields.ModelChoiceField` constructor.
         """
         def _build_field():
-            if callable(queryset):
+            if isinstance(queryset, collections.Callable):
                 qs = queryset()
             else:
                 qs = queryset

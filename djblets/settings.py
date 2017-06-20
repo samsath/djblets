@@ -5,7 +5,7 @@
 # static media to bundle with djblets.
 #
 # This should generally not be used in a project.
-from __future__ import unicode_literals
+
 
 import os
 

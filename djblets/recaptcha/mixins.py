@@ -3,7 +3,7 @@
 See :ref:`using-recaptcha` for a guide on using reCAPTCHA validation.
 """
 
-from __future__ import unicode_literals
+
 
 import json
 import logging

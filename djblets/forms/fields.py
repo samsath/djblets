@@ -1,6 +1,6 @@
 """Additional fields for Django forms."""
 
-from __future__ import unicode_literals
+
 
 import logging
 
@@ -16,6 +16,7 @@ from djblets.conditions.errors import (ConditionChoiceNotFoundError,
                                        InvalidConditionModeError,
                                        InvalidConditionValueError)
 from djblets.forms.widgets import ConditionsWidget
+import collections
 
 
 TIMEZONE_CHOICES = tuple(zip(pytz.common_timezones, pytz.common_timezones))
@@ -83,7 +84,7 @@ class ConditionsField(forms.Field):
             **kwargs (dict):
                 Extra keyword arguments for the field.
         """
-        if callable(choices):
+        if isinstance(choices, collections.Callable):
             choices = choices()
 
         for choice in choices:

@@ -1,6 +1,6 @@
 """Utility functions for working with template-related caches."""
 
-from __future__ import unicode_literals
+
 
 try:
     # Django >= 1.6, <= 1.8

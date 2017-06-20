@@ -1,6 +1,6 @@
 """Testing feature-related decorators."""
 
-from __future__ import unicode_literals
+
 
 from django.http import (HttpResponse, HttpResponseForbidden,
                          HttpResponseNotFound)

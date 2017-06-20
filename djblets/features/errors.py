@@ -1,6 +1,6 @@
 """Error classes for features."""
 
-from __future__ import unicode_literals
+
 
 from djblets.registries.errors import AlreadyRegisteredError, ItemLookupError
 
